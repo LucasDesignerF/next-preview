@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Application - Aluguel de Bots Discord</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Custom Styles -->
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-custom {
+            background-color: #7289da;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #5b6ee1;
+            transform: translateY(-2px);
+        }
+
+        .feature-card, .pricing-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover, .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #7289da, #9b59b6);
+            -webkit-background-clip: text;
+            background-clip: text; /* Compatibilidade */
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #7289da, #9b59b6);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #7289da;
+            margin: 0.5rem auto;
+        }
+
+        /* Cores personalizadas para seções e containers */
+        .hero-section {
+            background-color: #1a1a1a;
+        }
+
+        .features-section {
+            background-color: #2c2f33; /* Fundo da seção */
+        }
+
+        .features-section .feature-card {
+            background-color: #23272a; /* 10-20% mais escuro que o fundo da seção */
+        }
+
+        .pricing-section {
+            background-color: #23272a; /* Fundo da seção */
+        }
+
+        .pricing-section .pricing-card {
+            background-color: #1e2125; /* 10-20% mais escuro que o fundo da seção */
+        }
+
+        .bot-description-section {
+            background-color: #2c2f33; /* Fundo da seção */
+        }
+
+        .bot-description-section .description-card {
+            background-color: #23272a; /* 10-20% mais escuro que o fundo da seção */
+        }
+
+        .footer-section {
+            background-color: #1a1a1a;
+        }
+
+        .icon-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .icon-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .icon-list i {
+            margin-right: 0.75rem;
+            font-size: 1.25rem;
+            color: #7289da;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar sticky-top py-4 shadow-lg" style="background-color: #23272a;">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a href="#" class="flex items-center text-lg font-bold text-white">
+                <i class="fa-solid fa-robot text-2xl mr-2 gradient-text"></i>
+                Next Application
+            </a>
+            <div class="flex items-center space-x-6">
+                <a href="#hero" class="text-gray-300 hover:text-purple-500 transition-colors">Início</a>
+                <a href="#features" class="text-gray-300 hover:text-purple-500 transition-colors">Recursos</a>
+                <a href="#pricing" class="text-gray-300 hover:text-purple-500 transition-colors">Preços</a>
+                <select id="language-switcher" class="bg-transparent text-gray-300 border-none focus:outline-none">
+                    <option value="pt-br" selected>PT-BR</option>
+                    <option value="en-us">EN-US</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero py-32 hero-section text-white">
+        <div class="container mx-auto text-center px-4">
+            <h1 class="text-6xl font-bold mb-6">Alugue o Melhor Bot de Vendas do Discord</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Automatize suas vendas, aumente sua eficiência e ofereça uma experiência única aos seus clientes com a Next Application.</p>
+            <a href="https://discord.gg/q64k9hM5yE" target="_blank" class="btn-custom px-8 py-4 rounded-full text-white font-semibold text-lg">Comece Agora</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features py-20 features-section">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title">Por que escolher a Next Application?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-card p-8 rounded-lg shadow-md text-center">
+                    <i class="fa-solid fa-bolt text-5xl gradient-text mb-6"></i>
+                    <h4 class="text-2xl font-bold text-white mb-4">Rápido e Eficiente</h4>
+                    <p class="text-gray-400">Nossos bots são otimizados para desempenho máximo, garantindo velocidade e confiabilidade.</p>
+                </div>
+                <div class="feature-card p-8 rounded-lg shadow-md text-center">
+                    <i class="fa-solid fa-shield-halved text-5xl gradient-text mb-6"></i>
+                    <h4 class="text-2xl font-bold text-white mb-4">Segurança Garantida</h4>
+                    <p class="text-gray-400">Proteção total para seus dados e transações, com criptografia avançada.</p>
+                </div>
+                <div class="feature-card p-8 rounded-lg shadow-md text-center">
+                    <i class="fa-solid fa-headset text-5xl gradient-text mb-6"></i>
+                    <h4 class="text-2xl font-bold text-white mb-4">Suporte Prioritário</h4>
+                    <p class="text-gray-400">Equipe de suporte disponível 24/7 para resolver suas dúvidas e problemas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing py-20 pricing-section">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title">Planos e Preços</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="pricing-card p-8 rounded-lg shadow-md text-center">
+                    <h4 class="text-2xl font-bold text-white mb-4">Semanal</h4>
+                    <p class="text-4xl font-bold gradient-text my-6">R$0,70</p>
+                    <ul class="text-gray-400 space-y-3 mb-8">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Suporte básico</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> 1 bot por servidor</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Atualizações regulares</li>
+                    </ul>
+                    <a href="https://discord.gg/q64k9hM5yE" target="_blank" class="btn-custom w-full px-6 py-3 rounded-full text-white font-semibold">Assinar</a>
+                </div>
+                <div class="pricing-card p-8 rounded-lg shadow-md text-center">
+                    <h4 class="text-2xl font-bold text-white mb-4">Quinzenal</h4>
+                    <p class="text-4xl font-bold gradient-text my-6">R$1,30</p>
+                    <ul class="text-gray-400 space-y-3 mb-8">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Suporte prioritário</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> 1 bot por servidor</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Atualizações regulares</li>
+                    </ul>
+                    <a href="https://discord.gg/q64k9hM5yE" target="_blank" class="btn-custom w-full px-6 py-3 rounded-full text-white font-semibold">Assinar</a>
+                </div>
+                <div class="pricing-card p-8 rounded-lg shadow-md text-center">
+                    <h4 class="text-2xl font-bold text-white mb-4">Mensal</h4>
+                    <p class="text-4xl font-bold gradient-text my-6">R$2,45</p>
+                    <ul class="text-gray-400 space-y-3 mb-8">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Suporte dedicado</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> 1 bot por servidor</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Atualizações regulares</li>
+                    </ul>
+                    <a href="https://discord.gg/q64k9hM5yE" target="_blank" class="btn-custom w-full px-6 py-3 rounded-full text-white font-semibold">Assinar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bot Description Section -->
+    <section id="bot-description" class="py-20 bot-description-section">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title">Next Applications | Bot de Vendas</h2>
+            <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+                Transforme a experiência dos seus clientes e torne sua empresa mais profissional com nosso Bot de Vendas. Ofereça uma experiência única e diferenciada!
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="description-card p-8 rounded-lg shadow-md">
+                    <h4 class="text-xl font-bold text-white mb-4">Personalização Completa</h4>
+                    <p class="text-gray-400">Adapte o bot às necessidades específicas da sua loja, com configurações flexíveis e fáceis de usar.</p>
+                </div>
+                <div class="description-card p-8 rounded-lg shadow-md">
+                    <h4 class="text-xl font-bold text-white mb-4">Sistemas Exclusivos e Intuitivos</h4>
+                    <p class="text-gray-400">Funcionalidades exclusivas que garantem uma experiência única para seus clientes.</p>
+                </div>
+                <div class="description-card p-8 rounded-lg shadow-md">
+                    <h4 class="text-xl font-bold text-white mb-4">Premium</h4>
+                    <p class="text-gray-400">Acesso a recursos premium e suporte prioritário para garantir o melhor desempenho.</p>
+                </div>
+                <div class="description-card p-8 rounded-lg shadow-md">
+                    <h4 class="text-xl font-bold text-white mb-4">Atualizações Constantes</h4>
+                    <p class="text-gray-400">Sempre receba as últimas melhorias e correções para manter seu bot sempre atualizado.</p>
+                </div>
+            </div>
+            <div class="mt-12">
+                <h3 class="text-2xl font-bold text-white text-center mb-6">Funções:</h3>
+                <ul class="icon-list text-gray-400 max-w-2xl mx-auto">
+                    <li><i class="fa-solid fa-code-merge"></i>Sistema de integração com a API do MercadoPago (+18 e -18).</li>
+                    <li><i class="fa-solid fa-credit-card"></i>Pagamentos Automáticos e Semi-Automáticos.</li>
+                    <li><i class="fa-solid fa-shield"></i>Sistema de proteção contra reembolsos.</li>
+                    <li><i class="fa-solid fa-star"></i>Novos sistemas exclusivos que garantem funcionalidades únicas.</li>
+                    <li><i class="fa-solid fa-chart-line"></i>Painéis de Venda e Sistema de Rendimentos.</li>
+                </ul>
+                <h3 class="text-2xl font-bold text-white text-center mt-12 mb-6">Adicionais Inclusos:</h3>
+                <ul class="icon-list text-gray-400 max-w-2xl mx-auto">
+                    <li><i class="fa-solid fa-headset"></i>Suporte prioritário, tenha acesso a um canal de suporte exclusivo.</li>
+                    <li><i class="fa-solid fa-rotate"></i>Reinicio automático, reinicie o BOT automaticamente em caso de queda por erros!</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preview Section -->
+    <section id="preview" class="py-20 discord-dark-gray">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title">Veja o Bot em Ação</h2>
+            <div class="flex justify-center">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/jHbBMUBYvHU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 footer-section">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-400">&copy; 2025 Next Application. Todos os direitos reservados.</p>
+            <p class="text-gray-400 mt-2">
+                Desenvolvido com <i class="fa-solid fa-heart text-red-500"></i> por 
+                <a href="https://discord.gg/x74fnzcz2S" target="_blank" class="text-purple-500 hover:text-purple-400">
+                    <i class="fa-solid fa-code"></i> Code Projects
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script>
+        document.getElementById('language-switcher').addEventListener('change', function () {
+            const lang = this.value;
+            if (lang === 'pt-br') {
+                window.location.href = 'index.html';
+            } else if (lang === 'en-us') {
+                window.location.href = 'index_en-us.html';
+            }
+        });
+    </script>
+</body>
+</html>
